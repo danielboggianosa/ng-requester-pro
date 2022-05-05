@@ -1,0 +1,47 @@
+<div class="">
+  <div class="d-flex w-100">
+    <div class="w-25">
+      <select
+        class="form-control bg-dark text-light"
+        id="method"
+        name="method"
+        [(ngModel)]="method"
+      >
+        <option class="text-white" *ngFor="let method of methods" [value]="method">
+          {{ method }}
+        </option>
+      </select>
+      <!-- input for url -->
+    </div>
+    <div class="w-75 mx-1">
+      <input
+        type="text"
+        class="form-control bg-dark text-light"
+        id="url"
+        name="url"
+        placeholder="Enter request URL"
+        [(ngModel)]="url"
+      />
+    </div>
+    <!-- button for sending the request -->
+    <button
+      type="button"
+      class="btn btn-primary w-25"
+      (click)="sendRequest()"
+    >
+      Send
+    </button>
+  </div>
+  <div class="d-flex mt-2">
+    <div class="w-100">
+      <textarea
+        class="form-control bg-dark text-light"
+        id="body"
+        name="body"
+        rows="5"
+        placeholder="Enter request body"
+        [(ngModel)]="body"
+      ></textarea>
+    </div>
+  </div>
+</div>
